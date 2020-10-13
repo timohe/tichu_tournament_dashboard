@@ -1,0 +1,13 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+ <title>ionicons-v5-s</title>
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path id="svg_1" fill="none" stroke="#000" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32px" d="m87.49,380c1.19,-4.38 -1.44,-10.47 -3.95,-14.86a44.86,44.86 0 0 0 -2.54,-3.8a199.81,199.81 0 0 1 -33,-110c-0.35,-112.25 92.73,-203.34 207.83,-203.34c100.38,0 184.17,69.54 203.75,161.85a199,199 0 0 1 4.42,41.64c0,112.41 -89.49,204.93 -204.59,204.93c-18.3,0 -43,-4.6 -56.47,-8.37s-26.92,-8.77 -30.39,-10.11a31.09,31.09 0 0 0 -11.12,-2.07a30.71,30.71 0 0 0 -12.09,2.43l-67.83,24.48a16,16 0 0 1 -4.67,1.22a9.6,9.6 0 0 1 -9.57,-9.74a15.85,15.85 0 0 1 0.6,-3.29l19.62,-70.97z"/>
+  <text font-weight="bold" stroke="null" transform="matrix(1.7893947725325203,0,0,1.5171834806178026,-193.526806328536,-183.05262950789873) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="227" id="svg_2" y="380.409371" x="181.810176" stroke-opacity="null" stroke-width="0" fill="#000000">T</text>
+ </g>
+</svg>
