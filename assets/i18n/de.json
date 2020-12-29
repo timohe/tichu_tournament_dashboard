@@ -47,16 +47,16 @@
     "start_game": "Los geht's",
     "delete_alert_header": "Spiel löschen",
     "delete_alert_message": "Du kannst eine Anfrage senden, um das Spiel zu löschen.",
-    "nrOfGamesAchievement_title": "Test title",
-    "nrOfGamesAchievement_description": "Test description",
+    "nrOfGamesAchievement_title": "Einer geht noch",
+    "nrOfGamesAchievement_description": "Absolviere X Spiele",
     "at": "beim",
-    "nrDifferentPeoplePlayed_description": "Mit X verschiedenen gespielt",
-    "nrDifferentPeoplePlayed_title": "Socializer",
-    "playXGamesInOneMonth_description": "Spiele X Spiele in einem Monat",
-    "playXGamesInOneMonth_title": "Pro",
+    "nrDifferentPeoplePlayed_description": "Spiel mit X verschiedenen Personen",
+    "nrDifferentPeoplePlayed_title": "Superspreader",
+    "playXGamesInOneMonth_description": "Absolviere X Spiele in einem Monat",
+    "playXGamesInOneMonth_title": "Wie ein Profi",
     "tournament_achievement_description": "Du bist ein äussergewöhnlicher Tichu-Spieler",
-    "winningStreak_description": "Gewinne X Spiele nacheinander",
-    "winningStreak_title": "Streak"
+    "winningStreak_description": "Gewinne X Spiele in Folge",
+    "winningStreak_title": "Läuft bei mir"
   },
   "game": {
     "team_1": "Team 1",
@@ -86,14 +86,22 @@
     "cannot_add_guest_if_tournament": "Während eines Turniers können nur registrierte Spieler mitspielen!",
     "rematch": "REVANCHE",
     "current_game": "Aktuelles Spiel",
-    "finish_round": "Runde abschliessen",
+    "finish_round": "Punkte ohne Tichus eintragen",
     "toast_not_whitelisted": "Du kannst nur Spieler hinzufügen, welche dich auf ihrer Freundesliste haben.",
     "toast_error_user_has_active_game": "Dieser Spieler hat bereits ein laufendes Spiel und muss dieses zuerst abschliessen oder löschen.",
     "hint_guest_unranked": "Gastspiele werden nicht gewertet!",
-	"toast_tourney_requirements": "Alle Spieler müssen sich für das Turnier registrieren",
-	"unrated": "ungewertet"
+    "toast_tourney_requirements": "Alle Spieler müssen sich für das Turnier registrieren",
+    "unrated": "ungewertet",
+    "summary_draw": "Gleichstand!",
+    "summary_team_ahead": "{{name1}} und {{name2}} haben {{difference}} Punkte Vorsprung!",
+    "summary_no_rounds": "Noch keine Runden gespielt!"
   },
   "statistics": {
+    "daily": "Heute",
+    "weekly": "Diese Woche",
+    "monthly": "Dieser Monat",
+    "yearly": "Dieses Jahr",
+    "overall": "Alles",
     "tichuMaster": "Tichumaster",
     "tichuAnnouncedWhen1stRate": "Hellseher",
     "bigTichuSuccessRate": "Zocker",
@@ -104,7 +112,7 @@
     "tichuSuccessRate": "Tichu!",
     "winRate": "Champion",
     "elo": "Rating",
-    "explainer_bigTichuSuccessRate": "Anteil erfolgreicher grosser Tichus",
+    "explainer_bigTichuSuccessRate": "Anteil erfolgreicher Grand Tichus",
     "explainer_bombRate": "Bomben pro Runde",
     "explainer_doubleWinRate": "Anteil Doppelsiege",
     "explainer_nrGames": "Anzahl Spiele",
@@ -114,7 +122,9 @@
     "explainer_tichuSuccessRate": "Anteil erfolgreicher (kleiner) Tichus",
     "explainer_winRate": "Anteil gewonnener Spiele",
     "explainer_elo": "Rating nach ELO-System",
-    "search_to_compare": "Suchen für Vergleich"
+    "search_to_compare": "Suchen für Vergleich",
+    "unranked_hint": "Noch {{rounds}} gewertete Runden bis du dein Ranking siehst!",
+    "rounds_until_ranked": "Runden bis gewertet"
   },
   "tournaments": {
     "go_to_admin": "Zum Admin-Bereich",
@@ -149,7 +159,7 @@
   "profile": {
     "name": "Name",
     "email": "Email",
-    "password": "Passwort",
+    "password": "Passwort ändern",
     "language": "Sprache",
     "contact": "Kontakt",
     "new_email": "Neue Email",
@@ -162,7 +172,9 @@
     "logout": "Logout",
     "toast_userAlreadyOnWhiteListError": "Spieler bereits auf deiner Liste!",
     "whitelist": "Freundesliste",
-    "faq": "FAQ und über uns"
+    "search_results": "Suchresultate",
+    "faq": "FAQ und über uns",
+    "settings": "EINSTELLUNGEN"
   },
   "general": {
     "offline_title": "Du bist offline",
