@@ -5,8 +5,8 @@ import { TournamentDashboardPage } from './tournament-dashboard.page';
 
 const routes: Routes = [
   {
-    path: '',
-    component: TournamentDashboardPage
+	path: '',
+	component: TournamentDashboardPage
   }
 ];
 

@@ -1,0 +1,21 @@
+<ion-card>
+	<ion-card-header class="top">
+		<img src='{{ "../../assets/icon/stats/" + propertyName + ".svg" }}' alt="">
+		<div class="wrapper">
+			<ion-card-title>{{statName}}</ion-card-title>
+		</div>
+	</ion-card-header>
+
+	<ion-card-content>
+		<ion-list *ngIf="statsToShow.length > 0;">
+			<ion-item lines="none" detail="false" *ngFor="let stat of statsToShow; index as i;">
+				<ion-label *ngIf="rankings">
+					{{rankings[i]}}. {{stat?.name}}
+				</ion-label>
+				<ion-note slot="end">
+					{{stat[propertyName]}}{{showPercentage}}
+				</ion-note>
+			</ion-item>
+		</ion-list>
+	</ion-card-content>
+</ion-card>

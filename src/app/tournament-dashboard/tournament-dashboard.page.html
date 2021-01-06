@@ -1,9 +1,98 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>{{tournamentName}}</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
-{{tournamentName}}
+	<div class="top-spacer"></div>
+
+	<ion-button class="leaderboard-toggle" (click)="toggleShowLeaderboard()">
+		<ion-icon *ngIf="!showLeaderboard" class="toggle-icon" name="trophy"></ion-icon>
+		<ion-icon *ngIf="showLeaderboard" class="toggle-icon" name="podium"></ion-icon>
+	</ion-button>
+
+
+	
+
+	<div *ngIf="!showLeaderboard">
+		<h1>{{tournamentName}}</h1>
+		<ion-grid>
+			<ion-row>
+				<ion-col sizeLg="3" sizeMd="4" sizeXs="6">
+					<app-tournament-dashboard-tile statName="{{'statistics.tichuMaster' | translate }}"
+						[bestList]='activeTournamentBestlist' propertyName='tichuMaster' showPercentage=''>
+					</app-tournament-dashboard-tile>
+				</ion-col>
+				<ion-col sizeLg="3" sizeMd="4" sizeXs="6">
+					<app-tournament-dashboard-tile [bestList]='activeTournamentBestlist'
+						propertyName='tichuAnnouncedWhen1stRate' showPercentage='%'
+						statName="{{'statistics.tichuAnnouncedWhen1stRate' | translate }}">
+					</app-tournament-dashboard-tile>
+				</ion-col>
+				<ion-col sizeLg="3" sizeMd="4" sizeXs="6">
+					<app-tournament-dashboard-tile [bestList]='activeTournamentBestlist' showPercentage='%'
+						propertyName='winRate' statName="{{'statistics.winRate' | translate }}">
+					</app-tournament-dashboard-tile>
+				</ion-col>
+				<ion-col sizeLg="3" sizeMd="4" sizeXs="6">
+					<app-tournament-dashboard-tile [bestList]='activeTournamentBestlist' showPercentage='%'
+						propertyName='bombRate' statName="{{'statistics.bombRate' | translate }}">
+					</app-tournament-dashboard-tile>
+				</ion-col>
+				<ion-col sizeLg="3" sizeMd="4" sizeXs="6">
+					<app-tournament-dashboard-tile [bestList]='activeTournamentBestlist' showPercentage='%'
+						propertyName='doubleWinRate' statName="{{'statistics.doubleWinRate' | translate }}">
+					</app-tournament-dashboard-tile>
+				</ion-col>
+				<ion-col sizeLg="3" sizeMd="4" sizeXs="6">
+					<app-tournament-dashboard-tile [bestList]='activeTournamentBestlist' showPercentage='%'
+						propertyName='tichuPreventedRate' statName="{{'statistics.tichuPreventedRate' | translate }}">
+					</app-tournament-dashboard-tile>
+				</ion-col>
+				<ion-col sizeLg="3" sizeMd="4" sizeXs="6">
+					<app-tournament-dashboard-tile [bestList]='activeTournamentBestlist' showPercentage='%'
+						statName="{{'statistics.tichuSuccessRate' | translate }}" propertyName='tichuSuccessRate'>
+					</app-tournament-dashboard-tile>
+				</ion-col>
+				<ion-col sizeLg="3" sizeMd="4" sizeXs="6">
+					<app-tournament-dashboard-tile [bestList]='activeTournamentBestlist' howPercentage='%'
+						propertyName='bigTichuSuccessRate' statName="{{'statistics.bigTichuSuccessRate' | translate }}">
+					</app-tournament-dashboard-tile>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</div>
+
+	<div *ngIf="showLeaderboard">
+		<h1>Leaderboard</h1>
+		<div class="leaderboard-container">
+			<ion-item class="leaderboard header" lines="none" detail="false">
+				<ion-label class="rank">
+					Rank
+				</ion-label>
+				<ion-label class="users">
+					Users
+				</ion-label>
+				<ion-label class="winpoints">
+					Winpoints/Round
+				</ion-label>
+				<ion-label class="difference">
+					Point-Difference				
+				</ion-label>
+			</ion-item>
+			<div class="leaderboard list" *ngIf="activeTournamentRanking">
+				<ion-item lines="none" detail="false" *ngFor="let ranking of activeTournamentRanking; index as i;">
+					<ion-label>
+						{{i+1}}.
+					</ion-label>
+					<ion-label class="users">
+						{{ranking.player1Name}} {{teamGameAndSymbol}} {{ranking.player2Name}}
+					</ion-label>
+					<ion-label class="winpoints">
+						{{ranking.winpointsPerRound}}
+					</ion-label>
+					<ion-label class="difference">
+						{{ranking.pointDifference}}
+					</ion-label>
+				</ion-item>
+			</div>
+		</div>
+	</div>
+
+
 </ion-content>

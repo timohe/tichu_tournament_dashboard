@@ -7,8 +7,11 @@ export const environment = {
 };
 
 export const SERVER_URL = 'http://localhost:5000/api';
+export const TOURNAMENT_BASE_URL = 'http://localhost:8100/tournament-dashboard';
+
 export const DISABLE_FRIENDLIST = true;
 export const TOURNAMENT_WEBSITE_MODE = true;
+
 
 /*
  * For easier debugging in development mode, you can import the following file

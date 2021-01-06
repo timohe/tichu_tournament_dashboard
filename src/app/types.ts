@@ -21,6 +21,15 @@ export interface Whitelist {
 	name: string;
 }
 
+export interface OpenTournamentGame {
+	scoreTeam1: number;
+	scoreTeam2: number;
+	playerName1: string;
+	playerName2: string;
+	playerName3: string;
+	playerName4: string;
+}
+
 export interface User {
 	elo: Array<Elo>;
 	overall_stats: {
@@ -280,4 +289,14 @@ export interface Achievement {
 		progress: number;
 		target: number;
 	};
+}
+
+export interface TournamentRankingEntry {
+	player1Id: string;
+	player2Id: string;
+	player1Name: string;
+	player2Name: string;
+	winpointsPerRound: number;
+	nrGames: number;
+	pointDifference: number;
 }
