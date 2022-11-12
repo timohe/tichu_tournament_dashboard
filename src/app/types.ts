@@ -12,8 +12,14 @@ export interface UserToLogin {
 export interface UserToRegister {
 	name: string;
 	email: string;
-	password: string;
-	password2: string;
+}
+
+export interface RegisterResponse {
+	user: User;
+	id: string,
+	email: string,
+	access_token: string,
+	expires_in: number
 }
 
 export interface Whitelist {
@@ -71,7 +77,7 @@ export interface Round {
 }
 
 export interface Game {
-	_id?: string;
+	id: string;
 	players: Array<User>;
 	finished: boolean;
 	isRated: boolean;
@@ -88,6 +94,13 @@ export interface FinalScore {
 	team2: number;
 }
 
+export interface FriendRequest {
+	_id: string,
+	inviterId: string,
+	inviterName: string,
+	recipient: string,
+}
+
 export interface GameResponse {
 	gameId: string;
 }
@@ -95,8 +108,11 @@ export interface GameResponse {
 export interface ScorePredictionResponse {
 	pointsFromPoints: Array<number>;
 	pointsFromTichu: Array<number>;
+	tichus: Array<number>;
+	bombs: Array<number>;
 	oldScore: Array<number>;
 	newScore: Array<number>;
+	roundId: string;
 }
 
 export interface SingleGameOverviewResponse {
@@ -194,7 +210,7 @@ export interface TournamentMember {
 }
 
 export interface Tournament {
-	_id: string;
+	id: string;
 	owner: string;
 	name: string;
 	type: 'swiss' | 'random';
@@ -265,8 +281,17 @@ export interface StatusMessage {
 
 export interface ProfilePictureResponse {
 	img: string;
-	_id: string;
+	id: string;
 	userId: string;
+}
+
+export interface UserAutoCreateResponse {
+	user: {
+		id: string;
+		email: string;
+		access_token: string;
+		expires_in: number;
+	};
 }
 
 export interface Achievement {

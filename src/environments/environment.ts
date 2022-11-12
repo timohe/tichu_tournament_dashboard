@@ -7,10 +7,14 @@ export const environment = {
 };
 
 export const SERVER_URL = 'http://localhost:5000/api';
-export const TOURNAMENT_BASE_URL = 'http://localhost:8100/tournament-dashboard';
+// export const SERVER_URL = 'http://10.0.2.2:5000/api';
 
-export const DISABLE_FRIENDLIST = true;
+// Set this to true to have the tournament mode run locally
 export const TOURNAMENT_WEBSITE_MODE = true;
+// e.g. http://localhost:8100/tournament-dashboard?tournamentName=test
+export const TOURNAMENT_BASE_URL = 'https://timohe.github.io/tichu_tournament_dashboard/';
+export const DISABLE_FRIENDLIST = false;
+
 
 
 /*

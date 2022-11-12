@@ -9,12 +9,24 @@
 	<ion-card-content>
 		<ion-list *ngIf="statsToShow.length > 0;">
 			<ion-item lines="none" detail="false" *ngFor="let stat of statsToShow; index as i;">
+				<div class="comparison" *ngIf="rankings">
+					<div class="number-and-name">
+						<p class="rating-number" *ngIf="rankings">{{rankings[i]}}.</p>
+						<p *ngIf="rankings">{{stat?.name}}</p>
+					</div>
+					<p>{{stat[propertyName]}}{{showPercentage}}</p>
+				</div>
+				
+				
+				<!-- <ion-label class="rating-number" *ngIf="rankings">
+					{{rankings[i]}}.
+				</ion-label>
 				<ion-label *ngIf="rankings">
-					{{rankings[i]}}. {{stat?.name}}
+					{{stat?.name}}
 				</ion-label>
 				<ion-note slot="end">
 					{{stat[propertyName]}}{{showPercentage}}
-				</ion-note>
+				</ion-note> -->
 			</ion-item>
 		</ion-list>
 	</ion-card-content>

@@ -1,13 +1,10 @@
 <ion-content>
 	<div class="top-spacer"></div>
 
-	<ion-button class="leaderboard-toggle" (click)="toggleShowLeaderboard()">
+	<ion-button color="primary" class="leaderboard-toggle" (click)="toggleShowLeaderboard()">
 		<ion-icon *ngIf="!showLeaderboard" class="toggle-icon" name="trophy"></ion-icon>
 		<ion-icon *ngIf="showLeaderboard" class="toggle-icon" name="podium"></ion-icon>
 	</ion-button>
-
-
-	
 
 	<div *ngIf="!showLeaderboard">
 		<h1>{{tournamentName}}</h1>
@@ -66,7 +63,7 @@
 					Rank
 				</ion-label>
 				<ion-label class="users">
-					Users
+					Players
 				</ion-label>
 				<ion-label class="winpoints">
 					Winpoints/Round

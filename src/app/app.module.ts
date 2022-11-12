@@ -11,12 +11,7 @@ import { Network } from '@ionic-native/network/ngx';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { NgxSliderModule } from '@angular-slider/ngx-slider';
-import { BrowserModule, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
-import { GestureConfig } from '@angular/material';
-import { HammerModule } from '@angular/platform-browser';
-import 'hammerjs';
-
+import { BrowserModule } from '@angular/platform-browser';
 
 export function createTranslateLoader(http: HttpClient) {
 	return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -25,7 +20,7 @@ export function createTranslateLoader(http: HttpClient) {
 @NgModule({
   	declarations: [AppComponent],
   	entryComponents: [],
-	imports: [BrowserModule, IonicModule.forRoot(), NgxSliderModule, AppRoutingModule, AuthModule, TranslateModule.forRoot(), HttpClientModule,
+	imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AuthModule, TranslateModule.forRoot(), HttpClientModule,
 		TranslateModule.forRoot({
 			loader: {
 				provide: TranslateLoader,
@@ -33,13 +28,11 @@ export function createTranslateLoader(http: HttpClient) {
 				deps: [HttpClient]
 			}
 		}),
-		HammerModule
 	],
   	providers: [
 		Network,
 		{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
 		{ provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true },
-		{ provide: HAMMER_GESTURE_CONFIG, useClass: GestureConfig }
 	],
   	bootstrap: [AppComponent]
 })

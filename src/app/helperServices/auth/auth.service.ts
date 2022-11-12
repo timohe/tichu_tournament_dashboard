@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { Storage } from '@ionic/storage';
-import { UserToLogin, UserToRegister } from '../../types';
+import { RegisterResponse, UserToLogin, UserToRegister } from '../../types';
 import { AuthResponse } from './auth-response';
 import { environment, SERVER_URL } from '../../../environments/environment';
 
@@ -15,25 +15,14 @@ export class AuthService {
 	constructor(private httpClient: HttpClient, private storage: Storage) {
 	}
 
-	register(user: UserToRegister): Observable<AuthResponse> {
-		return this.httpClient.post<AuthResponse>(`${SERVER_URL}/users/register`, user).pipe(
-			tap(async (res: AuthResponse) => {
-				if (res.user) {
-					await this.storage.set('ACCESS_TOKEN', res.user.access_token);
-					await this.storage.set('EXPIRES_IN', res.user.expires_in);
-					this.authSubject.next(true);
-				}
-			})
-
-		);
+	registerWithoutPassword(user: UserToRegister): Observable<RegisterResponse> {
+		return this.httpClient.post<RegisterResponse>(`${SERVER_URL}/users/registerWithoutPassword`, user).pipe();
 	}
 
 	login(user: UserToLogin): Observable<AuthResponse> {
 		return this.httpClient.post(`${SERVER_URL}/users/login`, user).pipe(
 			tap(async (res: AuthResponse) => {
-				console.log('this is called');
 				if (res.user) {
-					console.log(`This is the user`, res.user);
 					await this.storage.set('USER_ID', res.user.id);
 					await this.storage.set('USER_EMAIL', res.user.email);
 					await this.storage.set('ACCESS_TOKEN', res.user.access_token);

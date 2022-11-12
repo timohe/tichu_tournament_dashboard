@@ -18,6 +18,7 @@ h1 {
     width: 5em;
     height: 5em;
 	text-align: center;
+	color: white;
 	// padding: 0;
     // font-size: 4em;
 }
@@ -39,7 +40,7 @@ h1 {
 }
 
 .leaderboard {
-    width: 70%;
+    width: 100%;
 }
 
 .rank {
@@ -77,7 +78,7 @@ h1 {
 
 .header {
     --background: var(--ion-color-background);
-    color: white;
+    color: black;
     margin-top: 0.3rem;
     border-radius: 8px 8px 8px 8px;
     --border-color: rgba(255, 255, 255, 0.9);
@@ -87,7 +88,7 @@ h1 {
 }
 
 ion-label {
-    font-size: 1.5rem !important;
+    font-size: 2rem !important;
     padding: 0 !important;
     margin: 0 !important;
 }

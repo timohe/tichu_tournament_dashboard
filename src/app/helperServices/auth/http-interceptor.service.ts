@@ -27,7 +27,7 @@ export class HttpInterceptorService implements HttpInterceptor {
 			headerSettings[key] = request.headers.getAll(key);
 		}
 		if (token) {
-			// tslint:disable-next-line:no-string-literal
+			// eslint-disable-next-line @typescript-eslint/dot-notation
 			headerSettings['Authorization'] = token;
 		}
 		headerSettings['Content-Type'] = 'application/json';

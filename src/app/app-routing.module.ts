@@ -5,7 +5,7 @@ const routes: Routes = [
 	{
 		path: 'tournament-dashboard',
 		loadChildren: () => import('./tournament-dashboard/tournament-dashboard.module').then(m => m.TournamentDashboardPageModule)
-	}
+	},
 ];
 
 @NgModule({
