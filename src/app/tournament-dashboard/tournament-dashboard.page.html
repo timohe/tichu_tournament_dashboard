@@ -8,6 +8,9 @@
 
 	<div *ngIf="!showLeaderboard">
 		<h1>{{tournamentName}}</h1>
+		<h2>
+			Next Round in {{timeTillNextRound}}
+		</h2>
 		<ion-grid>
 			<ion-row>
 				<ion-col sizeLg="3" sizeMd="4" sizeXs="6">
@@ -57,6 +60,9 @@
 
 	<div *ngIf="showLeaderboard">
 		<h1>Leaderboard</h1>
+		<h2>
+			Next Round in {{timeTillNextRound}}
+		</h2>
 		<div class="leaderboard-container">
 			<ion-item class="leaderboard header" lines="none" detail="false">
 				<ion-label class="rank">
@@ -66,7 +72,7 @@
 					Players
 				</ion-label>
 				<ion-label class="winpoints">
-					Winpoints/Round
+					Winpoints
 				</ion-label>
 				<ion-label class="difference">
 					Point-Difference				
@@ -81,7 +87,7 @@
 						{{ranking.player1Name}} {{teamGameAndSymbol}} {{ranking.player2Name}}
 					</ion-label>
 					<ion-label class="winpoints">
-						{{ranking.winpointsPerRound}}
+						{{ranking.totalWinpoints}}
 					</ion-label>
 					<ion-label class="difference">
 						{{ranking.pointDifference}}

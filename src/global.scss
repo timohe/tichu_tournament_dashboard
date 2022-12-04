@@ -10,30 +10,27 @@
  */
 
 /* Core CSS required for Ionic components to work properly */
-@import "~@ionic/angular/css/core.css";
-
+@import "@ionic/angular/css/core.css";
 /* Basic CSS for apps built with Ionic */
-@import "~@ionic/angular/css/normalize.css";
-@import "~@ionic/angular/css/structure.css";
-@import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import '@ionic/angular/css/display.css';
 
 /* Optional CSS utils that can be commented out */
-@import "~@ionic/angular/css/padding.css";
-@import "~@ionic/angular/css/float-elements.css";
-@import "~@ionic/angular/css/text-alignment.css";
-@import "~@ionic/angular/css/text-transformation.css";
-@import "~@ionic/angular/css/flex-utils.css";
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
-@import '~swiper/scss';
-@import '~@ionic/angular/css/ionic-swiper';
-@import '~swiper/scss';
-@import '~swiper/scss/autoplay';
-@import '~swiper/scss/keyboard';
-@import '~swiper/scss/pagination';
-@import '~swiper/scss/scrollbar';
-@import '~swiper/scss/zoom';
-@import '~@ionic/angular/css/ionic-swiper';
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+@import 'swiper/scss';
+@import '@ionic/angular/css/ionic-swiper';
+@import 'swiper/scss/autoplay';
+@import 'swiper/scss/keyboard';
+@import 'swiper/scss/pagination';
+@import 'swiper/scss/scrollbar';
+@import 'swiper/scss/zoom';
+@import '@ionic/angular/css/ionic-swiper';
 
 ion-content {
     // --padding-bottom: 50px;
@@ -41,12 +38,6 @@ ion-content {
     --padding-start: 5%;
     --padding-top: 5%;
 }
-
-.swiper-pagination {
-    bottom: 14em !important;
-}
-
-
 
 // Tab titles
 h1 {
@@ -81,6 +72,15 @@ p {
     text-align: center;
 }
 
+
+.item-has-focus {
+    --border-color: var(--ion-color-secondary);
+}
+
+.item-has-focus .label-floating {
+    color: var(--ion-color-secondary);
+    --border-color: var(--ion-color-secondary);
+}
 
 .item-has-focus .label-floating.sc-ion-label-md-h:not(.ion-color) {
     color: var(--ion-color-secondary);

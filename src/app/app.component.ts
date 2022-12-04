@@ -10,7 +10,6 @@ import { SERVER_URL, TOURNAMENT_WEBSITE_MODE } from '../environments/environment
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
-import { FirebaseAnalytics } from '@capacitor-community/firebase-analytics';
 import { Network } from '@capacitor/network';
 import { SplashScreen } from '@capacitor/splash-screen';
 import { Device } from '@capacitor/device';
@@ -108,16 +107,16 @@ export class AppComponent {
 	async initFirebaseAnalytics() {
 		// This is for the web implementation
 		// See https://github.com/capacitor-community/firebase-analytics
-		FirebaseAnalytics.initializeFirebase({
-			databaseURL: '...',
-			apiKey: 'AIzaSyBD2HeZv6y-WHesi2xPDR4lJ52BQsqdiKQ',
-			authDomain: 'tichu-stats.firebaseapp.com',
-			projectId: 'tichu-stats',
-			storageBucket: 'tichu-stats.appspot.com',
-			messagingSenderId: '1099165342061',
-			appId: '1:1099165342061:web:1cba9de4b2b4779b1c2264',
-			measurementId: 'G-H3VZT74VVD'
-		});
+		// FirebaseAnalytics.initializeFirebase({
+		// 	databaseURL: '...',
+		// 	apiKey: 'AIzaSyBD2HeZv6y-WHesi2xPDR4lJ52BQsqdiKQ',
+		// 	authDomain: 'tichu-stats.firebaseapp.com',
+		// 	projectId: 'tichu-stats',
+		// 	storageBucket: 'tichu-stats.appspot.com',
+		// 	messagingSenderId: '1099165342061',
+		// 	appId: '1:1099165342061:web:1cba9de4b2b4779b1c2264',
+		// 	measurementId: 'G-H3VZT74VVD'
+		// });
 	}
 
 	
@@ -149,7 +148,7 @@ export class AppComponent {
 			});
 		});	
 		this.setLanguage();
-		this.initFirebaseAnalytics();
+		// this.initFirebaseAnalytics();
 		this.platform.ready().then(() => {
 			this.checkForStatusMessage();
 			this.setStatusBarForiOS();

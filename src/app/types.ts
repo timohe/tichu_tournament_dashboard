@@ -43,7 +43,7 @@ export interface User {
 		nrWins: number;
 		winRate: number
 	};
-	whitelist: Array<Whitelist>;
+	whitelist?: Array<Whitelist>;
 	round_stats: {
 		rounds: number;
 		points: number;
@@ -61,7 +61,7 @@ export interface User {
 	id: string;
 	name: string;
 	email: string;
-	password: string;
+	password?: string;
 	date: string;
 }
 
@@ -222,6 +222,7 @@ export interface Tournament {
 	timePerRound: number;
 	isLastRound: boolean;
 	created: Date;
+	lastRoundStartedAt: Date;
 }
 
 export interface TournamentUserStats {
@@ -317,11 +318,12 @@ export interface Achievement {
 }
 
 export interface TournamentRankingEntry {
-	player1Id: string;
-	player2Id: string;
-	player1Name: string;
-	player2Name: string;
-	winpointsPerRound: number;
-	nrGames: number;
-	pointDifference: number;
+	player1Id: string,
+	player2Id: string,
+	player1Name: string,
+	player2Name: string,
+	winpointsPerRound: number,
+	totalWinpoints: number,
+	nrGames: number,
+	pointDifference: number
 }

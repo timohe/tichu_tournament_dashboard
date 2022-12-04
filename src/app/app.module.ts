@@ -18,22 +18,21 @@ export function createTranslateLoader(http: HttpClient) {
 }
 
 @NgModule({
-  	declarations: [AppComponent],
-  	entryComponents: [],
-	imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AuthModule, TranslateModule.forRoot(), HttpClientModule,
-		TranslateModule.forRoot({
-			loader: {
-				provide: TranslateLoader,
-				useFactory: (createTranslateLoader),
-				deps: [HttpClient]
-			}
-		}),
-	],
-  	providers: [
-		Network,
-		{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-		{ provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true },
-	],
-  	bootstrap: [AppComponent]
+    declarations: [AppComponent],
+    imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AuthModule, TranslateModule.forRoot(), HttpClientModule,
+        TranslateModule.forRoot({
+            loader: {
+                provide: TranslateLoader,
+                useFactory: (createTranslateLoader),
+                deps: [HttpClient]
+            }
+        }),
+    ],
+    providers: [
+        Network,
+        { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+        { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true },
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {}

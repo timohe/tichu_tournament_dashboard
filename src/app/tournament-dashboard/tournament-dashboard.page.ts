@@ -25,6 +25,8 @@ export class TournamentDashboardPage implements OnInit {
 	tournamentName: string;
 	teamGameAndSymbol: string;
 	showLeaderboard: boolean;
+	currentTournament: Tournament;
+	timeTillNextRound: string;
 
 	constructor(private route: ActivatedRoute, public translator: TranslateService, private toastService: ToastService, private httpClient: HttpClient, public toastController: ToastController) { }
 	ngOnInit() {
@@ -35,7 +37,7 @@ export class TournamentDashboardPage implements OnInit {
 				// refresh every 15 seconds
 				const x = setInterval(() => {
 					this.refreshActiveTournament(this.tournamentName);
-				}, 30000);
+				}, 5000);
 			}
 		});
 	}
@@ -49,7 +51,40 @@ export class TournamentDashboardPage implements OnInit {
 				this.teamGameAndSymbol = '&';
 			}
 		});
+		this.APIgetTournamentByName(name).subscribe((tournament) => {
+			this.currentTournament = tournament;
+			this.refreshRemainingTime();
+		});
 	}
+
+	refreshRemainingTime() {
+		if (!this.currentTournament.lastRoundStartedAt) {
+			return;
+		}
+		let roundStartDate = new Date(this.currentTournament.lastRoundStartedAt)
+		// Update the count down every 1 second
+		const now = new Date();
+		var diffInMs = (roundStartDate.getTime() + this.currentTournament.timePerRound * 60000) - now.getTime();
+		this.timeTillNextRound = this.humanReadableDuration(diffInMs);
+
+	}
+
+	humanReadableDuration(msDuration: number): string {
+		if (msDuration < 0) {
+			return `00:00:00`;
+		} else {
+			const h = Math.floor(msDuration / 1000 / 60 / 60);
+			const m = Math.floor((msDuration / 1000 / 60 / 60 - h) * 60);
+			const s = Math.floor(((msDuration / 1000 / 60 / 60 - h) * 60 - m) * 60);
+
+			// To get time format 00:00:00
+			const seconds: string = s < 10 ? `0${s}` : `${s}`;
+			const minutes: string = m < 10 ? `0${m}` : `${m}`;
+			const hours: string = h < 10 ? `0${h}` : `${h}`;
+			return `${hours}:${minutes}:${seconds}`;
+		}
+	}
+
 
 	toggleShowLeaderboard() {
 		this.showLeaderboard = !this.showLeaderboard;
@@ -64,6 +99,13 @@ export class TournamentDashboardPage implements OnInit {
 
 	APIGetTournamentRanking(tournamentName: string): Observable<Array<TournamentRankingEntry>> {
 		return this.httpClient.get<Array<TournamentRankingEntry>>(`${SERVER_URL}/tournament/ranking/${tournamentName}`).pipe(catchError((err) => {
+			this.toastService.presentToast();
+			return throwError(err);
+		}));
+	}
+
+	APIgetTournamentByName(tournamentName: string): Observable<Tournament> {
+		return this.httpClient.get<Tournament>(`${SERVER_URL}/tournament/getTournamentByName/${tournamentName}`).pipe(catchError((err) => {
 			this.toastService.presentToast();
 			return throwError(err);
 		}));
